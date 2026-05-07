@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Bel Bolos e Doces</title>
+  <!-- Importando fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #fffafc; color: #5a2d2d; }
+    header { background: #f8c1d1; padding: 30px; text-align: center; }
+    header h1 { font-family: 'Great Vibes', cursive; font-size: 3em; margin: 0; color: #5a2d2d; }
+    header p { font-size: 2.0em; color: #5a2d2d; }
+    header img { display: block; margin: 0 auto 15px auto; width: 180px; }
+    nav { background: #5a2d2d; padding: 15px; text-align: center; }
+    nav a { color: #fff; margin: 0 20px; text-decoration: none; font-weight: 600; }
+    nav a:hover { color: #d4af37; }
+    section { padding: 40px; max-width: 1000px; margin: auto; }
+    h2 { color: #5a2d2d; border-bottom: 2px solid #f8c1d1; padding-bottom: 10px; }
+    /* Galeria */
+    .galeria { display: flex; justify-content: center; gap: 30px; }
+    .img-container { position: relative; width: 180px; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .img-container img { width: 100%; transition: transform 0.3s ease; display: block; }
+    .img-container:hover img { transform: scale(2.0); }
+    .legenda { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(90, 45, 45, 0.8); color: #fff; text-align: center; padding: 8px; font-size: 0.9em; opacity: 0; transform: translateY(100%); transition: all 0.3s ease; }
+    .img-container:hover .legenda { opacity: 1; transform: translateY(0); }
+    /* Formulário */
+    form input, form textarea { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #ccc; }
+    button { background: #5a2d2d; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #d4af37; color: #5a2d2d; }
+    footer { background: #f8c1d1; text-align: center; padding: 15px; font-size: 0.9em; }
+	.zoom-container {
+	  width: 300px;       /* tamanho da área visível */
+	  height: 200px;
+	  overflow: hidden;   /* esconde o que passar da área */
+	  position: relative;
+	  border-radius: 12px;
+	  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	}
+
+	.zoom-img {
+	  width: 100%;
+	  transition: transform 0.3s ease;
+	  transform-origin: center center;
+	}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imagens/logo.png" alt="Logo Ana Bel Bolos e Doces">
+    <h1>Ana Bel Bolos e Doces</h1>
+    <p>Feito com carinho para adoçar sua vida</p>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#galeria">Produtos</a>
+    <a href="#encomendas">Encomendas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <section id="home">
+    <h2>Bem-vindo!</h2>
+    <p>Descubra nossos bolos e doces artesanais, feitos com ingredientes selecionados e muito amor.</p>
+  </section>
+  <section id="galeria">
+    <h2>Nossos Bolos</h2>
+    <div class="galeria">
+      <div class="img-container">
+        <img src="imagens/foto01.png" alt="Bolo de Chocolate">
+        <div class="legenda">Bolo com Tema infantil</div>
+      </div>
+      <div class="img-container">
+        <img src="imagens/foto02.png" alt="Bolo de Morango">
+        <div class="legenda">Bolo com Tema adulto</div>
+      </div>
+	  <div class="zoom-container">
+		<img src="imagens/foto04.png" alt="Kit bolo e doces vários tamanhos e quantidades" class="zoom-img">
+        <div class="legenda">Kit de Bolo e Doces</div>
+	  </div>
+	  
+	  
+    </div>
+  </section>
+<section id="encomendas">
+  <h2>Faça contato para a encomenda</h2>
+  <form onsubmit="return false;">
+    <label>Nome:</label>
+    <input type="text" id="nome">
+    <label>Fone WhatsApp:</label>
+    <input type="text" id="telefone">
+    <label>Mensagem:</label>
+    <textarea id="mensagem"></textarea>
+    <br>
+    <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
+  </form>
+</section>
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>📞 WhatsApp: (31) 99105-5445</p>
+    <p>📧 Email: anabelbolosedoces@gmail.com</p>
+    <p><a href="https://www.instagram.com/_anabelbolosedoces_/">📷 Instagram: @_anabelbolosedoces_</a></p
+  </section>
+  <footer>
+    <p>&copy; 2026 Ana Bel Bolos e Doces</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+<script>
+function enviarWhatsApp() {
+  // Número do WhatsApp no formato internacional (exemplo: Brasil +55)
+  var numero = "553191055445"; // substitua pelo seu número real
+
+  // Captura os dados do formulário
+  var nome = document.getElementById("nome").value;
+  var telefone = document.getElementById("telefone").value;
+  var mensagem = document.getElementById("mensagem").value;
+
+  // Monta o texto da mensagem
+  var texto = "Olá, meu nome é " + nome + 
+              ". WhatsApp: " + telefone + 
+              ". Gostaria de encomendar: " + mensagem;
+
+  // Cria o link do WhatsApp
+  var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
+
+  // Abre o WhatsApp
+  window.open(url, "_blank");
+}
+
+const zoomContainer = document.querySelector('.zoom-container');
+const zoomImg = document.querySelector('.zoom-img');
+
+zoomContainer.addEventListener('mousemove', function(e) {
+  const rect = zoomContainer.getBoundingClientRect();
+  const x = e.clientX - rect.left; // posição do mouse dentro do container
+  const y = e.clientY - rect.top;
+
+  const xPercent = x / rect.width * 100;
+  const yPercent = y / rect.height * 100;
+
+  zoomImg.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+  zoomImg.style.transform = "scale(2)"; // aumenta 2x
+});
+
+zoomContainer.addEventListener('mouseleave', function() {
+  zoomImg.style.transform = "scale(1)";
+  zoomImg.style.transformOrigin = "center center";
+});
+
+</script>
