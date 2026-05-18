@@ -175,6 +175,35 @@
       white-space: nowrap;
       border: 0;
     }
+	
+    /* Mostrar box acima */
+	.img-container {
+	  position: relative;
+	  display: inline-block;
+	}
+
+	.tooltip {
+	  visibility: hidden;
+	  background-color: #333;
+	  color: #fff;
+	  text-align: center;
+	  padding: 5px;
+	  border-radius: 4px;
+	  position: absolute;
+	  bottom: 100%; /* aparece acima da imagem */
+	  left: 50%;
+	  transform: translateX(-50%);
+	  white-space: normal; /* permite quebra de linha */
+	  font-size: 12px; /* diminui a fonte */
+	  max-width: 150px; /* limita largura do texto */
+	  overflow: hidden; /* esconde excesso */
+	  text-overflow: ellipsis; /* adiciona "..." se ultrapassar */
+}
+
+	.img-container:hover .tooltip {
+	  visibility: visible;
+	}
+	
   </style>
 </head>
 <body>
@@ -202,27 +231,32 @@
     <!-- Galeria: cada .img-container deve ter uma imagem e uma legenda -->
     <div class="galeria" role="list" aria-label="Galeria de bolos">
       <div class="img-container" role="listitem">
-        <img src="imagens/foto09.png" alt="O Bolo da imagem contém duas camadas e o topo é cortesia do tema sugerido" data-index="0">
+        <img src="imagens/foto09.png" data-index="0">
         <div class="legenda">com tema infantil</div>
+        <span class="tooltip">O Bolo da imagem contém duas camadas e o topo é cortesia do tema sugerido</span>
       </div>
       <div class="img-container" role="listitem">
-        <img src="imagens/foto02.png" alt="O Bolo da imagem contém duas camadas e o topo é cortesia do tema sugerido" data-index="1">
+        <img src="imagens/foto02.png" data-index="1">
         <div class="legenda">com tema adulto</div>
-     ' </div>
+        <span class="tooltip">O Bolo da imagem contém duas camadas e o topo é cortesia do tema sugerido</span>
+      </div>
 
       <div class="img-container" role="listitem">
-        <img src="imagens/foto03.png" alt="O Bolo da imagem contém duas camadas e o topo é cortesia do tema sugerido" data-index="2">
+        <img src="imagens/foto03.png" data-index="2">
         <div class="legenda"> com tema Esporte</div>
+        <span class="tooltip">O Bolo da imagem contém duas camadas e o topo é cortesia do tema sugerido</span>
       </div>
 
       <div class="img-container" role="listitem">
-        <img src="imagens/foto04.png" alt="Vários tamanhos de Bolo e Docinhos sortidos" data-index="3">
+        <img src="imagens/foto04.png" data-index="3">
         <div class="legenda">Kit de Bolo e Doces</div>
-      </div>
+        <span class="tooltip">Vários tamanhos de Bolo e Docinhos sortidos</span>
+    </div>
 
       <div class="img-container" role="listitem">
-        <img src="imagens/foto16.png" alt="Bolinho e Maleta com Bolo de Pote, salgado, doce e suco" data-index="3">
+        <img src="imagens/foto16.png" data-index="3">
         <div class="legenda">Kit Festa Escolinha</div>
+        <span class="tooltip">Bolinho e Maleta com Bolo de Pote, salgado, doce e suco</span>
       </div>
 
       <!-- Adicione mais itens conforme necessário -->
